@@ -33,7 +33,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-    name: 'Login'
+    name: 'Home'
 });
 </script>
 
@@ -101,25 +101,27 @@ export default defineComponent({
 }
 
 .container-form-text-link:hover {
-    color: rgb(100, 100, 231);
+    color: rgb(100, 100, 230);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     .container {
-        flex-direction: column;
-        gap: 20px;
+        justify-content: space-between;
     }
 
     .container-image {
         width: 400px;
     }
+}
 
-    .container-form {
-        width: 350px;
+@media (max-width: 1148px) {
+    .container {
+        flex-direction: column;
+        height: 85vh;
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 720px) {
     .container-image {
         width: 350px;
     }

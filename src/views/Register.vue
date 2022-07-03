@@ -46,8 +46,7 @@ export default defineComponent({
 }
 
 .container {
-    width: 430px;
-    padding: 16px;
+    width: 400px;
     color: white;
     border: 2px solid rgb(73, 73, 214);
     border-radius: 8px;
