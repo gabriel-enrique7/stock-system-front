@@ -2,11 +2,11 @@
     <main class="content">
 
         <div class="container">
-            <h1 class="container-title">Registre-se</h1>
+            <h1 class="container-title">Login</h1>
 
             <form>
                 <div class="container-form-control">
-                    <label for="email">E-mail</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" placeholder="Digite seu email">
                 </div>
 
@@ -15,14 +15,9 @@
                     <input type="password" id="password" placeholder="Digite sua senha">
                 </div>
 
-                <div class="container-form-control">
-                    <label for="confirm-password">Confirme sua senha</label>
-                    <input type="password" id="confirm-password" placeholder="Confirme sua senha">
-                </div>
-
-                <button class="container-form-button">Enviar</button>
+                <button class="container-form-button">Entrar</button>
             </form>
-            <p class="container-text">Já tem uma conta? <router-link class="container-text-link" to="/login">Faça o login</router-link></p>
+            <p class="container-text">Ainda não tem uma conta? <router-link class="container-text-link" to="/register">Registre-se</router-link></p>
         </div>
 
     </main>
@@ -32,7 +27,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-    name: 'Register'
+    name: 'Login'
 });
 </script>
 
@@ -62,7 +57,7 @@ export default defineComponent({
 .container-title::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 25px;
     height: 5px;
     background-color: rgb(73, 73, 214);
     margin: 5px auto;
@@ -72,7 +67,7 @@ export default defineComponent({
 }
 
 .container-title:hover::after {
-    width: 150px;
+    width: 75px;
 }
 
 .container-text {

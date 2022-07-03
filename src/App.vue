@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import '@/css/form.css';
 
 export default defineComponent({
   name: 'App'
