@@ -22,7 +22,7 @@
 
                 <button class="container-form-button">Enviar</button>
             </form>
-            <p class="container-text">Já tem uma conta? <router-link class="container-text-link" to="/login">Faça o login</router-link></p>
+            <p class="container-text">Já tem uma conta? <router-link class="container-text-link" to="/">Faça o login</router-link></p>
         </div>
 
     </main>
@@ -49,6 +49,9 @@ export default defineComponent({
     width: 430px;
     padding: 16px;
     color: white;
+    border: 2px solid rgb(73, 73, 214);
+    border-radius: 8px;
+    padding: 2rem;
 }
 
 .container-title {
