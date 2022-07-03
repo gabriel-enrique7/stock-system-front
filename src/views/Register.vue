@@ -125,5 +125,10 @@ export default defineComponent({
 .container-text-link {
     text-decoration: none;
     color: rgb(73, 73, 214);
+    transition: color .3s ease-in-out;
+}
+
+.container-text-link:hover {
+    color: rgb(100, 100, 231);
 }
 </style>
