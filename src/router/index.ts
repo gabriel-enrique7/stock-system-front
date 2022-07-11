@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 import Home from '@/views/Home.vue';
 import Register from '@/views/Register.vue';
+import PageNotFound from '@/views/PageNotFound.vue';
 
 const routes: RouteRecordRaw[] = [
     {
@@ -14,6 +15,12 @@ const routes: RouteRecordRaw[] = [
         path: '/register',
         name: 'Register',
         component: Register
+    },
+
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'PageNotFound',
+        component: PageNotFound
     }
 
 ]
