@@ -4,20 +4,20 @@
         <div class="container">
             <h1 class="container-title">Registre-se</h1>
 
-            <form>
+            <form @submit.prevent="registerUser" novalidate>
                 <div class="container-form-control">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu email">
+                    <input type="email" id="email" placeholder="Digite seu email" v-model="newUser.email">
                 </div>
 
                 <div class="container-form-control">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="Digite sua senha">
+                    <input type="password" id="password" placeholder="Digite sua senha" v-model="newUser.password">
                 </div>
 
                 <div class="container-form-control">
                     <label for="confirm-password">Confirme sua senha</label>
-                    <input type="password" id="confirm-password" placeholder="Confirme sua senha">
+                    <input type="password" id="confirm-password" placeholder="Confirme sua senha" v-model="newUser.confirmPassword">
                 </div>
 
                 <button class="container-form-button">Enviar</button>
@@ -30,9 +30,25 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import IRegister from '@/interfaces/IRegister';
 
 export default defineComponent({
-    name: 'Register'
+    name: 'Register',
+    data() {
+        return {
+            newUser: {
+                email: '',
+                password: '',
+                confirmPassword: ''
+            } as IRegister
+        }
+    },
+
+    methods: {
+        registerUser() {
+            console.log(this.newUser);
+        }
+    }
 });
 </script>
 

@@ -9,15 +9,15 @@
             <div class="container-form">
                 <h1 class="container-form-title">Login</h1>
 
-                <form>
+                <form @submit.prevent="login" novalidate>
                     <div class="container-form-control">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Digite seu email">
+                        <input type="email" id="email" placeholder="Digite seu email" v-model="user.email">
                     </div>
 
                     <div class="container-form-control">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" placeholder="Digite sua senha">
+                        <input type="password" id="password" placeholder="Digite sua senha" v-model="user.password">
                     </div>
 
                     <button class="container-form-button">Entrar</button>
@@ -31,9 +31,24 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ILogin from '@/interfaces/ILogin';
 
 export default defineComponent({
-    name: 'Home'
+    name: 'Home',
+    data() {
+        return {
+            user: {
+                email: '',
+                password: ''
+            } as ILogin
+        }
+    },
+
+    methods: {
+        login() {
+            console.log(this.user);
+        }
+    }
 });
 </script>
 
