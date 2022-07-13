@@ -9,7 +9,7 @@
             <div class="container-form">
                 <h1 class="container-form-title">Login</h1>
 
-                <form @submit.prevent="login" novalidate>
+                <form @submit.prevent="signIn" novalidate>
                     <div class="container-form-control">
                         <label for="email">Email</label>
                         <input type="email" id="email" placeholder="Digite seu email" v-model="user.email">
@@ -40,13 +40,13 @@ export default defineComponent({
             user: {
                 email: '',
                 password: ''
-            } as ILogin
-        }
+            },
+        };
     },
 
     methods: {
-        login() {
-            console.log(this.user);
+        signIn() {
+            console.log(this.user as ILogin);
         }
     }
 });
