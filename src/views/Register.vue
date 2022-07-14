@@ -4,7 +4,7 @@
         <div class="container">
             <h1 class="container-title">Registre-se</h1>
 
-            <form @submit.prevent="registerUser" novalidate>
+            <form @submit.prevent="signUp" novalidate>
                 <div class="container-form-control">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" placeholder="Digite seu email" v-model="newUser.email">
@@ -40,13 +40,13 @@ export default defineComponent({
                 email: '',
                 password: '',
                 confirmPassword: ''
-            } as IRegister
-        }
+            },
+        };
     },
 
     methods: {
-        registerUser() {
-            console.log(this.newUser);
+        signUp() {
+            console.log(this.newUser as IRegister);
         }
     }
 });
