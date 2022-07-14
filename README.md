@@ -43,3 +43,7 @@ npm install
 ```
 npm run serve
 ```
+
+## Images Credits
+
+[storyset](https://storyset.com/)
