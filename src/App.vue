@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import '@/css/form.css';
 
 export default defineComponent({
   name: 'App'
@@ -11,6 +12,8 @@ export default defineComponent({
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
