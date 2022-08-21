@@ -1,4 +1,4 @@
-# Login and Register Page
+# Front-end of Stock System
 
 ## Tech Stack
 
