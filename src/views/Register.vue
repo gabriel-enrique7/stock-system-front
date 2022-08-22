@@ -6,18 +6,22 @@
 
             <form @submit.prevent="signUp" novalidate>
                 <div class="container-form-control">
+                    <label for="name">Primeiro Nome</label>
+                    <input type="text" id="name" placeholder="Digite seu nome" v-model="user.name">
+                </div>
+                <div class="container-form-control">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu email" v-model="newUser.email">
+                    <input type="email" id="email" placeholder="Digite seu email" v-model="user.email">
                 </div>
 
                 <div class="container-form-control">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="Digite sua senha" v-model="newUser.password">
+                    <input type="password" id="password" placeholder="Digite sua senha" v-model="user.password">
                 </div>
 
                 <div class="container-form-control">
                     <label for="confirm-password">Confirme sua senha</label>
-                    <input type="password" id="confirm-password" placeholder="Confirme sua senha" v-model="newUser.confirmPassword">
+                    <input type="password" id="confirm-password" placeholder="Confirme sua senha" v-model="confirmPassword">
                 </div>
 
                 <button class="container-form-button">Enviar</button>
@@ -30,23 +34,29 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import IRegister from '@/interfaces/IRegister';
+import http from '@/http';
 
 export default defineComponent({
     name: 'Register',
     data() {
         return {
-            newUser: {
+            user: {
+                name: '',
                 email: '',
                 password: '',
-                confirmPassword: ''
             },
+            confirmPassword: ''
         };
     },
 
     methods: {
         signUp() {
-            console.log(this.newUser as IRegister);
+            http.post("/api/user/create", this.user)
+                .then(() => {
+                    this.$router.push({ name: "Home" })
+                })
+                .catch(error => console.log(error));
+
         }
     }
 });

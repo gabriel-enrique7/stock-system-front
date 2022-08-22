@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ILogin from '@/interfaces/ILogin';
+import { useStore } from '@/store';
 
 export default defineComponent({
     name: 'Home',
@@ -46,7 +46,19 @@ export default defineComponent({
 
     methods: {
         signIn() {
-            console.log(this.user as ILogin);
+            this.store.dispatch("signIn", this.user)
+                .then(response => {
+                    console.log(response.data);
+                    this.$router.push({ name: "Dashboard" })
+                })
+                .catch(error => console.log(error))
+        }
+    },
+
+    setup() {
+        const store = useStore();
+        return {
+            store
         }
     }
 });
